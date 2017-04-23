@@ -1,0 +1,85 @@
+{
+  "name": "react_demo",
+  "version": "1.0.0",
+  "description": "React and Redux class files",
+  "scripts": {
+    "start": "concurrently \"npm run rest\" \"npm run web\"",
+    "clean": "rimraf dist",
+    "web": "webpack-dev-server",
+    "rest": "json-server --watch --port 3010 db.json",
+    "webpack:w": "webpack --watch",
+    "webpack": "webpack"
+  },
+  "keywords": [
+    "react",
+    "jsx",
+    "es2015"
+  ],
+  "author": "Eric W. Greene",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "babel-jest": "^18.0.0",
+    "concurrently": "^3.0.0",
+    "enzyme": "^2.7.1",
+    "jest": "^18.1.0",
+    "json-server": "^0.9.4",
+    "react-addons-test-utils": "^15.4.2",
+    "react-test-renderer": "^15.4.2",
+    "rimraf": "^2.5.2",
+    "sass-lint": "^1.10.2",
+    "webpack-dev-server": "^2.0.0"
+  },
+  "dependencies": {
+    "autoprefixer": "^6.5.4",
+    "babel-cli": "^6.18.0",
+    "babel-loader": "^6.2.9",
+    "babel-plugin-transform-class-properties": "^6.19.0",
+    "babel-plugin-transform-flow-strip-types": "^6.18.0",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "bootstrap": "4.0.0-alpha.6",
+    "bootstrap-loader": "2.0.0-beta.20",
+    "copy-webpack-plugin": "^4.0.1",
+    "css-loader": "^0.26.1",
+    "empty": "^0.10.1",
+    "eslint": "^3.12.1",
+    "eslint-config-defaults": "^9.0.0",
+    "eslint-plugin-react": "^6.7.1",
+    "extract-text-webpack-plugin": "^2.0.0-rc.3",
+    "file-loader": "^0.10.0",
+    "html-loader": "^0.4.3",
+    "html-webpack-plugin": "^2.22.0",
+    "key-mirror": "^1.0.1",
+    "lodash": "^4.16.2",
+    "node-sass": "^4.5.0",
+    "null-loader": "^0.1.1",
+    "postcss": "^5.0.21",
+    "postcss-import": "^9.1.0",
+    "postcss-loader": "^1.2.1",
+    "raw-loader": "^0.5.1",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-redux": "^5.0.2",
+    "react-router": "^3.0.0",
+    "react-router-redux": "^4.0.7",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.1.0",
+    "resolve-url-loader": "^1.6.1",
+    "sass-loader": "^5.0.1",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^2.2.1",
+    "whatwg-fetch": "^2.0.3"
+  },
+  "devServer": {
+    "contentBase": "dist",
+    "historyApiFallback": true,
+    "port": 3000,
+    "proxy": {
+      "/widgets": {
+        "target": "http://localhost:3010"
+      }
+    }
+  }
+}
